@@ -23,25 +23,26 @@ const Page = () => {
       </section>
 
       <section className='flex flex-col gap-6 mt-8'>
-          <h2>Your Interviews</h2>
+        <h2>Your Interviews</h2>
 
-          <div className='interviews-section'>
-              {dummyInterviews.map((interview) => (
-  <InterviewCard key={interview.id} {...interview} />
-))}
+        <div className='interviews-section'>
+          {dummyInterviews.map((interview) => (
+            <InterviewCard key={interview.id} {...interview} />
+          ))}
 
-              {/* <p>You haven&apos;t taken any interview yet</p> */}
-          </div>
+          {/* <p>You haven&apos;t taken any interview yet</p> */}
+        </div>
       </section>
 
       <section className='flex flex-col gap-6 mt-8'>
         <h2>Take an Interview</h2>
 
-        <div className='interview-section'>
-          {dummyInterviews.map((interview, index) => (
-  <InterviewCard key={interview.id} {...interview} />
-))}
+        <div className='interviews-section'>
+          {dummyInterviews.map((interview) => (
+            <InterviewCard key={interview.id} {...interview} />
+          ))}
 
+          {/* <p>You haven&apos;t taken any interview yet</p> */}
         </div>
       </section>
     </>
