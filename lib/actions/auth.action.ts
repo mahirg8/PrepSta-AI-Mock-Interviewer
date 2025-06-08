@@ -1,5 +1,6 @@
 'use server';
 import { auth, db } from "@/firebase/admin";
+import { CollectionReference } from "firebase-admin/firestore";
 import { cookies } from "next/headers";
 
 const SESSION_DURATION = 60 * 60 * 24 * 7;
@@ -116,4 +117,17 @@ export async function getCurrentUser(): Promise<User | null> {
 export async function isAuthenticated() {
   const user = await getCurrentUser();
   return !!user;
+}
+
+export async function getInterviewByUserId(userId: string): Promise<Inerview[] | null>{
+  const interviews = await db
+  .collection('interviews')
+  .where('userId', '==', userId)
+  .orderBy('createdAt', 'desc')
+  .get();
+
+  return interviews.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data()
+  })) as Interview[];
 }
