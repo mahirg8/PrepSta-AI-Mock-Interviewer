@@ -141,5 +141,5 @@ Contributions are welcome!
 
 ## 🙋‍♂️ Author
 
-Developed with ❤️ by [MahirG8](https://github.com/mahirg8)  
+Developed with ❤️ by [mahirg8](https://github.com/mahirg8)  
 Follow me for more awesome AI projects!
